@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	import Button from '$lib/components/Button.svelte';
 	import Accordion from '$lib/components/Accordion.svelte';
 	import ProfileCard from '$lib/components/ProfileCard.svelte';
@@ -103,21 +104,21 @@
 		{
 			name: 'Rebecca Kunnis',
 			title: 'Krea Studio Ambassador',
-			imageUrl: '/images/becca headshot.jpeg',
+			imageUrl: `${base}/images/becca headshot.jpeg`,
 			linkUrl: 'https://instagram.com/rebeccakunnis',
 			linkType: 'instagram' as const
 		},
 		{
 			name: 'Diego Rodriguez',
 			title: 'CTO & Co-founder of Krea',
-			imageUrl: '/images/diego headshot.jpeg',
+			imageUrl: `${base}/images/diego headshot.jpeg`,
 			linkUrl: 'https://linkedin.com/in/diegor',
 			linkType: 'linkedin' as const
 		},
 		{
 			name: 'Gabe Michael',
 			title: 'Krea Ambassador, Award-winning Producer',
-			imageUrl: '/images/gabemichael headshot.jpeg',
+			imageUrl: `${base}/images/gabemichael headshot.jpeg`,
 			linkUrl: 'https://gabemichael.ai/',
 			linkType: 'website' as const
 		}
@@ -253,7 +254,7 @@
 					>
 						<div class="w-40 h-24 rounded-lg overflow-hidden bg-primary-100">
 							<video
-								src="/videos/realtime-chair.webm"
+								src="{base}/videos/realtime-chair.webm"
 								muted
 								loop
 								playsinline
@@ -462,11 +463,11 @@
 		<!-- Logo Bar -->
 		<div class="max-w-4xl mx-auto mb-6">
 			<div class="flex items-center justify-center gap-8 md:gap-12 opacity-40">
-				<img src="/images/logos/microsoft.svg" alt="Microsoft" class="h-5 w-auto" />
-				<img src="/images/logos/shopify.svg" alt="Shopify" class="h-5 w-auto" />
-				<img src="/images/logos/lego.svg" alt="Lego" class="h-5 w-auto" />
-				<img src="/images/logos/samsung.svg" alt="Samsung" class="h-4 w-auto" />
-				<img src="/images/logos/nike.svg" alt="Nike" class="h-4 w-auto" />
+				<img src="{base}/images/logos/microsoft.svg" alt="Microsoft" class="h-5 w-auto" />
+				<img src="{base}/images/logos/shopify.svg" alt="Shopify" class="h-5 w-auto" />
+				<img src="{base}/images/logos/lego.svg" alt="Lego" class="h-5 w-auto" />
+				<img src="{base}/images/logos/samsung.svg" alt="Samsung" class="h-4 w-auto" />
+				<img src="{base}/images/logos/nike.svg" alt="Nike" class="h-4 w-auto" />
 			</div>
 		</div>
 
