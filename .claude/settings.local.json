@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npm create:*)",
+      "Bash(npx sv:*)",
+      "Bash(npm install:*)",
+      "Bash(pip3 show:*)",
+      "Bash(pip show:*)",
+      "Bash(pip3 install:*)",
+      "Bash(export PATH=\"$PATH:/Users/jakeskrea/Library/Python/3.9/bin\")",
+      "Bash(# Find and copy the uploaded images to the project # The images were shown in the conversation - they should be in a temp location # Let me find recent image files find /tmp -name \"\"*.jpg\"\" -o -name \"\"*.png\"\" -o -name \"\"*.jpeg\"\" -o -name \"\"*.webp\"\")",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "mcp__Control_Chrome__reload_tab",
+      "Bash(timeout 5 npm run build:*)",
+      "Bash(npm run build:*)",
+      "Bash(open \"http://localhost:5173\")",
+      "Bash(lsof:*)",
+      "Bash(gh auth status:*)",
+      "Bash(git config:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
