@@ -24,7 +24,8 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Krea Studio Workshop Landing Page\n\nSvelteKit landing page with:\n- Hero section with animated text rotation\n- Team profiles with grayscale hover effect\n- Video marquee showcasing Krea products\n- Registration form with animated border\n- Collapsible FAQ section\n- Pixel trail cursor effect\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\nConfigure for GitHub Pages deployment\n\n- Switch to @sveltejs/adapter-static\n- Add base path for GitHub Pages\n- Add GitHub Actions workflow for auto-deploy\n- Add favicon\n- Fix asset paths to use base path\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nConfigure for GitHub Pages deployment\n\n- Switch to @sveltejs/adapter-static\n- Add base path for GitHub Pages\n- Add GitHub Actions workflow for auto-deploy\n- Add favicon\n- Fix asset paths to use base path\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nConnect form to Google Forms submission\n\n- Change company field to email type with \"Company email\" placeholder\n- Submit form data to Google Forms via POST request\n- Map fields: name, work email, urgency level\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
