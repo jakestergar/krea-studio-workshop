@@ -502,13 +502,21 @@
 	<!-- Footer -->
 	<footer class="relative z-10 px-6 py-6 mt-8 bg-white">
 		<!-- Logo Bar -->
-		<div class="max-w-4xl mx-auto mb-6">
-			<div class="flex items-center justify-center gap-8 md:gap-12 opacity-40">
-				<img src="{base}/images/logos/microsoft.svg" alt="Microsoft" class="h-5 w-auto" />
-				<img src="{base}/images/logos/shopify.svg" alt="Shopify" class="h-5 w-auto" />
-				<img src="{base}/images/logos/lego.svg" alt="Lego" class="h-5 w-auto" />
+		<div class="max-w-5xl mx-auto mb-6">
+			<div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 opacity-40">
+				<img src="{base}/images/logos/microsoft.svg" alt="Microsoft" class="h-6 w-auto" />
+				<img src="{base}/images/logos/shopify.svg" alt="Shopify" class="h-6 w-auto" />
+				<img src="{base}/images/logos/netflix.svg" alt="Netflix" class="h-4 w-auto" />
+				<img src="{base}/images/logos/amazon.svg" alt="Amazon" class="h-5 w-auto" />
+				<img src="{base}/images/logos/nike.svg" alt="Nike" class="h-5 w-auto" />
 				<img src="{base}/images/logos/samsung.svg" alt="Samsung" class="h-4 w-auto" />
-				<img src="{base}/images/logos/nike.svg" alt="Nike" class="h-4 w-auto" />
+				<img src="{base}/images/logos/lego.svg" alt="Lego" class="h-5 w-auto" />
+				<img src="{base}/images/logos/superside.svg" alt="Superside" class="h-5 w-auto" />
+				<img src="{base}/images/logos/redantler.svg" alt="Red Antler" class="h-5 w-auto" />
+				<img src="{base}/images/logos/collins.svg" alt="Collins" class="h-5 w-auto" />
+				<img src="{base}/images/logos/publicis.svg" alt="Publicis" class="h-5 w-auto" />
+				<img src="{base}/images/logos/mccann.svg" alt="McCann" class="h-5 w-auto" />
+				<img src="{base}/images/logos/paramount.svg" alt="Paramount" class="h-4 w-auto" />
 			</div>
 		</div>
 
