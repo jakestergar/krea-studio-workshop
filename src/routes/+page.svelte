@@ -156,20 +156,42 @@
 		const formBody = new URLSearchParams({
 			'entry.888904114': formData.name,
 			'entry.512725705': formData.company,
-			'entry.1231521517': urgencyLabels[formData.urgency - 1]
+			'entry.1231521517': String(formData.urgency)
 		});
 
 		try {
-			await fetch(googleFormUrl, {
-				method: 'POST',
-				mode: 'no-cors',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: formBody.toString()
-			});
+			// Use an iframe to submit - more reliable for cross-origin Google Forms
+			const iframe = document.createElement('iframe');
+			iframe.name = 'hidden_iframe';
+			iframe.style.display = 'none';
+			document.body.appendChild(iframe);
+
+			const form = document.createElement('form');
+			form.method = 'POST';
+			form.action = googleFormUrl;
+			form.target = 'hidden_iframe';
+
+			for (const [key, value] of formBody.entries()) {
+				const input = document.createElement('input');
+				input.type = 'hidden';
+				input.name = key;
+				input.value = value;
+				form.appendChild(input);
+			}
+
+			document.body.appendChild(form);
+			form.submit();
+
+			// Clean up after a short delay
+			setTimeout(() => {
+				document.body.removeChild(form);
+				document.body.removeChild(iframe);
+			}, 1000);
+
 			submitSuccess = true;
 		} catch (error) {
-			// Google Forms returns opaque response with no-cors, but submission still works
-			submitSuccess = true;
+			console.error('Form submission error:', error);
+			submitSuccess = true; // Still show success to user
 		}
 
 		isSubmitting = false;
