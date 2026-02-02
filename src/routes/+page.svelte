@@ -151,12 +151,12 @@
 		e.preventDefault();
 		isSubmitting = true;
 
-		// Submit to Google Forms
+		// Submit to Google Forms (using sub-field IDs)
 		const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSee2ogt7hBGLw979-e6Y5_IQ4ZdbLK1E78lgHiif9Gz7ljlCQ/formResponse';
 		const formBody = new URLSearchParams({
-			'entry.888904114': formData.name,
-			'entry.512725705': formData.company,
-			'entry.1231521517': String(formData.urgency)
+			'entry.1266935613': formData.name,
+			'entry.1271550787': formData.company,
+			'entry.1012494792': String(formData.urgency)
 		});
 
 		try {
