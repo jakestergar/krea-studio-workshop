@@ -110,7 +110,7 @@
 		},
 		{
 			name: 'Diego Rodriguez',
-			title: 'CTO & Co-founder of Krea',
+			title: 'Co-founder of Krea',
 			imageUrl: `${base}/images/diego headshot.jpeg`,
 			linkUrl: 'https://linkedin.com/in/diegor',
 			linkType: 'linkedin' as const
