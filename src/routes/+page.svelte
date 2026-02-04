@@ -503,20 +503,18 @@
 	<footer class="relative z-10 px-6 py-6 mt-8 bg-white">
 		<!-- Logo Bar -->
 		<div class="max-w-5xl mx-auto mb-6">
-			<div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 opacity-40">
-				<img src="{base}/images/logos/microsoft.svg" alt="Microsoft" class="h-6 w-auto" />
-				<img src="{base}/images/logos/shopify.svg" alt="Shopify" class="h-6 w-auto" />
-				<img src="{base}/images/logos/netflix.svg" alt="Netflix" class="h-4 w-auto" />
-				<img src="{base}/images/logos/amazon.svg" alt="Amazon" class="h-5 w-auto" />
-				<img src="{base}/images/logos/nike.svg" alt="Nike" class="h-5 w-auto" />
-				<img src="{base}/images/logos/samsung.svg" alt="Samsung" class="h-4 w-auto" />
-				<img src="{base}/images/logos/lego.svg" alt="Lego" class="h-5 w-auto" />
-				<img src="{base}/images/logos/superside.svg" alt="Superside" class="h-5 w-auto" />
-				<img src="{base}/images/logos/redantler.svg" alt="Red Antler" class="h-5 w-auto" />
-				<img src="{base}/images/logos/collins.svg" alt="Collins" class="h-5 w-auto" />
-				<img src="{base}/images/logos/publicis.svg" alt="Publicis" class="h-5 w-auto" />
-				<img src="{base}/images/logos/mccann.svg" alt="McCann" class="h-5 w-auto" />
-				<img src="{base}/images/logos/paramount.svg" alt="Paramount" class="h-4 w-auto" />
+			<div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+				<img src="{base}/images/logos/microsoft.svg" alt="Microsoft" class="h-6 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/shopify.svg" alt="Shopify" class="h-6 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/nike.svg" alt="Nike" class="h-5 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/amazon studios logo.png" alt="Amazon Studios" class="h-6 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/a24 logo.png" alt="A24" class="h-7 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/publicis logo.png" alt="Publicis" class="h-8 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/red antler logo.png" alt="Red Antler" class="h-6 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/mccann logo.png" alt="McCann" class="h-5 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/collins logo.png" alt="Collins" class="h-5 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/som logo.png" alt="SOM" class="h-5 w-auto grayscale opacity-50" />
+				<img src="{base}/images/logos/henning larsen logo.png" alt="Henning Larsen" class="h-5 w-auto grayscale opacity-50" />
 			</div>
 		</div>
 
