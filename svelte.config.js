@@ -13,7 +13,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: '/krea-studio-workshop'
+			base: '/krea-education'
 		}
 	}
 };
