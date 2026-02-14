@@ -5,7 +5,7 @@
 	import TextRotate from '$lib/components/TextRotate.svelte';
 	import Marquee from '$lib/components/Marquee.svelte';
 	import PixelTrail from '$lib/components/PixelTrail.svelte';
-	import { ChevronDown, Check, GraduationCap, Sparkles, Users, Zap } from 'lucide-svelte';
+	import { ChevronDown, Check, ArrowRight } from 'lucide-svelte';
 
 	let mounted = $state(false);
 
@@ -18,29 +18,29 @@
 
 	const faqItems = [
 		{
-			id: 'cost',
-			question: 'Is Krea for Education free?',
-			answer: 'Yes. Krea for Education provides free access to our full creative AI suite for verified students and educators at accredited institutions.'
+			id: 'student-access',
+			question: 'How do students get access?',
+			answer: 'Sign up at krea.ai with your .edu email, then apply through the form below. Once approved, you get full access to Krea\'s creative AI tools.'
 		},
 		{
-			id: 'eligible',
-			question: 'Who is eligible?',
-			answer: 'Students, faculty, and staff at accredited K-12 schools, colleges, and universities. You just need a valid .edu email address or proof of enrollment to get started.'
+			id: 'educator',
+			question: 'I\'m an educator — how does this work for my classroom?',
+			answer: 'We offer hands-on workshops for your class or department, plus education pricing for team accounts. Reach out through the form and select "Educator" — we\'ll set up a call to scope what works for your program.'
 		},
 		{
 			id: 'includes',
-			question: 'What\'s included in the education plan?',
-			answer: 'Full access to all Krea tools — Real-Time Generation, Advanced Edit, Krea Nodes, and 55+ AI models. Plus shared team workspaces, custom style training, and priority support for classroom use.'
+			question: 'What tools do students get access to?',
+			answer: 'Everything — Real-Time Generation, Advanced Edit, Krea Nodes, 55+ AI models, custom style training, and drag-and-drop workflows. The same platform used professionally at Nike, A24, and Microsoft.'
 		},
 		{
-			id: 'teams',
-			question: 'Can I set up Krea for my whole class or department?',
-			answer: 'Absolutely. Educators can create team workspaces for their students with shared asset libraries, collaborative projects, and admin controls. We support classes of any size.'
+			id: 'who',
+			question: 'Who is this for?',
+			answer: 'Students in design, architecture, film, marketing, fine arts, or any creative discipline. If your work involves visual creation, Krea accelerates it.'
 		},
 		{
 			id: 'commercial',
-			question: 'Can students use their work commercially?',
-			answer: 'Student work created with Krea for Education belongs to the student. For commercial licensing details, reach out to our education team.'
+			question: 'Can I use what I make in my portfolio?',
+			answer: 'Yes. Work you create with Krea is yours. Use it in your portfolio, thesis, exhibitions — wherever you need it.'
 		}
 	];
 
@@ -49,29 +49,11 @@
 		name: '',
 		email: '',
 		institution: '',
-		role: ''
+		role: 'student'
 	});
 
 	let isSubmitting = $state(false);
 	let submitSuccess = $state(false);
-
-	const audienceCards = [
-		{
-			icon: GraduationCap,
-			title: 'Students',
-			description: 'Build your portfolio with professional AI creative tools. Free while you\'re enrolled.'
-		},
-		{
-			icon: Users,
-			title: 'Educators',
-			description: 'Bring AI-native design into your curriculum. Manage classrooms and assignments with shared workspaces.'
-		},
-		{
-			icon: Zap,
-			title: 'Institutions',
-			description: 'Equip your programs with the creative AI platform used by Nike, Microsoft, and A24.'
-		}
-	];
 
 	const features = [
 		{
@@ -108,7 +90,7 @@
 		const formBody = new URLSearchParams({
 			'entry.1266935613': formData.name,
 			'entry.1271550787': formData.email,
-			'entry.1012494792': formData.institution
+			'entry.1012494792': `${formData.role} — ${formData.institution}`
 		});
 
 		try {
@@ -162,27 +144,26 @@
 	<!-- Hero Section -->
 	<section class="relative z-10 flex flex-col items-center justify-center px-6 pt-16 pb-12">
 		<div class="max-w-2xl mx-auto text-center">
-			<div class="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-6">
-				<Sparkles size={14} class="text-primary-500" />
-				<span class="text-xs text-primary-600 font-medium tracking-wide uppercase">Free for students & educators</span>
-			</div>
+			<p class="text-primary-500 text-xs tracking-[0.2em] uppercase mb-4">
+				Krea for Education
+			</p>
 
 			<h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-snug mb-5 text-primary-900 leading-[1.1]">
-				Krea for Education
+				The creative AI platform, built for what's next.
 			</h1>
 
 			<p class="text-base md:text-lg text-primary-500 mb-6 leading-relaxed max-w-lg mx-auto">
-				The AI creative suite used by the world's best teams — now free for classrooms.
+				The same tools used by professionals at Nike, A24, and Microsoft — available for students and classrooms.
 			</p>
 
 			<div class="flex items-center justify-center gap-x-2 text-sm md:text-base text-primary-500 mb-8">
-				<span class="shrink-0">Help students</span>
+				<span class="shrink-0">Learn to</span>
 				<TextRotate
 					texts={[
-						'create with AI',
-						'build real portfolios',
-						'learn faster',
-						'think visually',
+						'generate in real time',
+						'build visual workflows',
+						'train custom styles',
+						'create with 55+ models',
 						'ship creative work'
 					]}
 					mainClassName="bg-primary-900 text-white px-3 py-1.5 rounded-lg font-medium"
@@ -198,24 +179,38 @@
 				href="#signup"
 				class="register-btn inline-block bg-primary-900 text-white text-base font-medium py-3.5 px-10 rounded-xl transition-all"
 			>
-				Get Started Free
+				Apply Now
 			</a>
 		</div>
 	</section>
 
-	<!-- Audience Section -->
+	<!-- Two Paths Section -->
 	<section class="relative z-10 px-6 py-12">
 		<div class="max-w-3xl mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-				{#each audienceCards as card}
-					<div class="group border border-primary-200 rounded-xl p-5 hover:border-primary-400 transition-colors">
-						<div class="w-9 h-9 bg-primary-50 rounded-lg flex items-center justify-center mb-3">
-							<card.icon size={18} class="text-primary-600" />
-						</div>
-						<h3 class="text-sm font-semibold text-primary-900 mb-1.5">{card.title}</h3>
-						<p class="text-xs text-primary-500 leading-relaxed">{card.description}</p>
-					</div>
-				{/each}
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+				<!-- Student Path — Primary -->
+				<a href="#signup" class="group border border-primary-200 rounded-xl p-6 hover:border-primary-900 transition-colors block">
+					<p class="text-xs text-primary-500 tracking-[0.15em] uppercase mb-2">For Students</p>
+					<h3 class="text-lg font-semibold text-primary-900 mb-2">Sign up with your .edu</h3>
+					<p class="text-sm text-primary-500 leading-relaxed mb-4">
+						Apply for access to Krea's full creative AI suite. Build your portfolio with the same tools used in production at top studios and agencies.
+					</p>
+					<span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-900 group-hover:gap-2.5 transition-all">
+						Apply now <ArrowRight size={12} />
+					</span>
+				</a>
+
+				<!-- Educator Path — Secondary -->
+				<a href="#signup" class="group border border-primary-150 rounded-xl p-6 hover:border-primary-300 transition-colors block">
+					<p class="text-xs text-primary-400 tracking-[0.15em] uppercase mb-2">For Educators</p>
+					<h3 class="text-lg font-semibold text-primary-700 mb-2">Bring Krea to your classroom</h3>
+					<p class="text-sm text-primary-500 leading-relaxed mb-4">
+						Workshops for your students, team workspaces for your program, and education pricing. We'll tailor it to your curriculum.
+					</p>
+					<span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-500 group-hover:text-primary-700 group-hover:gap-2.5 transition-all">
+						Get in touch <ArrowRight size={12} />
+					</span>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -223,7 +218,7 @@
 	<!-- Features Section -->
 	<section class="relative z-10 py-12 border-y border-primary-200 bg-white">
 		<div class="max-w-3xl mx-auto px-6 mb-8">
-			<p class="text-xs text-primary-500 tracking-[0.2em] uppercase mb-3">What you get</p>
+			<p class="text-xs text-primary-500 tracking-[0.2em] uppercase mb-3">The platform</p>
 			<h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-snug text-primary-900 leading-tight">
 				Every tool. Every model.<br />No limits on learning.
 			</h2>
@@ -258,7 +253,7 @@
 		<!-- Capability List -->
 		<div class="max-w-3xl mx-auto px-6 mt-10">
 			<div class="grid grid-cols-2 md:grid-cols-4 gap-y-3 gap-x-6">
-				{#each ['55+ AI models', 'Real-time generation', 'Custom style training', 'Team workspaces', 'Drag-and-drop workflows', 'API access', 'Asset libraries', 'Priority support'] as item}
+				{#each ['55+ AI models', 'Real-time generation', 'Custom style training', 'Team workspaces', 'Drag-and-drop workflows', 'API access', 'Asset libraries', 'Brand consistency tools'] as item}
 					<div class="flex items-center gap-2">
 						<Check size={14} class="text-primary-400 shrink-0" />
 						<span class="text-xs text-primary-600">{item}</span>
@@ -271,7 +266,7 @@
 	<!-- Social Proof -->
 	<section class="relative z-10 px-6 py-10 bg-white">
 		<div class="max-w-3xl mx-auto text-center">
-			<p class="text-xs text-primary-400 tracking-[0.15em] uppercase mb-6">Trusted by teams at</p>
+			<p class="text-xs text-primary-400 tracking-[0.15em] uppercase mb-6">Used professionally at</p>
 			<div class="flex flex-wrap items-center justify-center gap-8 md:gap-10">
 				<img src="{base}/images/logos/microsoft.svg" alt="Microsoft" class="h-5 w-auto grayscale opacity-40" />
 				<img src="{base}/images/logos/shopify.svg" alt="Shopify" class="h-5 w-auto grayscale opacity-40" />
@@ -288,10 +283,10 @@
 		<div class="max-w-md mx-auto">
 			<div class="text-center mb-6">
 				<h2 class="text-2xl font-semibold tracking-snug mb-2 text-primary-900">
-					Get started for free
+					Apply for access
 				</h2>
 				<p class="text-sm text-primary-500">
-					Verify your .edu email and start creating in minutes.
+					Tell us a bit about yourself and we'll get you set up.
 				</p>
 			</div>
 
@@ -300,11 +295,32 @@
 					<div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
 						<Check size={24} class="text-primary-600" />
 					</div>
-					<h3 class="text-base font-medium mb-1 text-primary-900">You're on the list.</h3>
-					<p class="text-xs text-primary-500">We'll send next steps to your inbox shortly.</p>
+					<h3 class="text-base font-medium mb-1 text-primary-900">Application received.</h3>
+					<p class="text-xs text-primary-500">We'll be in touch at your email shortly.</p>
 				</div>
 			{:else}
 				<form onsubmit={handleSubmit} class="bg-white rounded-xl border border-primary-200 p-5 space-y-3">
+					<!-- Role Toggle -->
+					<div>
+						<label class="block text-xs text-primary-700 mb-1.5">I am a...</label>
+						<div class="grid grid-cols-2 gap-2">
+							<button
+								type="button"
+								onclick={() => formData.role = 'student'}
+								class="py-2 px-3 rounded-lg text-sm font-medium transition-colors border {formData.role === 'student' ? 'bg-primary-900 text-white border-primary-900' : 'bg-primary-50 text-primary-500 border-primary-200 hover:border-primary-300'}"
+							>
+								Student
+							</button>
+							<button
+								type="button"
+								onclick={() => formData.role = 'educator'}
+								class="py-2 px-3 rounded-lg text-sm font-medium transition-colors border {formData.role === 'educator' ? 'bg-primary-900 text-white border-primary-900' : 'bg-primary-50 text-primary-500 border-primary-200 hover:border-primary-300'}"
+							>
+								Educator
+							</button>
+						</div>
+					</div>
+
 					<div>
 						<label for="name" class="block text-xs text-primary-700 mb-1">Name</label>
 						<input
@@ -318,47 +334,31 @@
 					</div>
 
 					<div>
-						<label for="email" class="block text-xs text-primary-700 mb-1">School email</label>
+						<label for="email" class="block text-xs text-primary-700 mb-1">{formData.role === 'student' ? 'School email' : 'Email'}</label>
 						<input
 							type="email"
 							id="email"
 							bind:value={formData.email}
 							required
 							class="w-full bg-primary-50 border border-primary-200 rounded-lg px-3 py-2.5 text-sm text-primary-900 placeholder:text-primary-400 focus:outline-none focus:border-primary-400 transition-colors"
-							placeholder="you@university.edu"
+							placeholder={formData.role === 'student' ? 'you@university.edu' : 'you@school.edu'}
 						/>
 					</div>
 
 					<div>
-						<label for="institution" class="block text-xs text-primary-700 mb-1">Institution</label>
+						<label for="institution" class="block text-xs text-primary-700 mb-1">{formData.role === 'student' ? 'School' : 'Institution / Department'}</label>
 						<input
 							type="text"
 							id="institution"
 							bind:value={formData.institution}
 							required
 							class="w-full bg-primary-50 border border-primary-200 rounded-lg px-3 py-2.5 text-sm text-primary-900 placeholder:text-primary-400 focus:outline-none focus:border-primary-400 transition-colors"
-							placeholder="School or university name"
+							placeholder={formData.role === 'student' ? 'Your school or university' : 'University — Design Dept.'}
 						/>
 					</div>
 
-					<div>
-						<label for="role" class="block text-xs text-primary-700 mb-1">I am a...</label>
-						<select
-							id="role"
-							bind:value={formData.role}
-							required
-							class="w-full bg-primary-50 border border-primary-200 rounded-lg px-3 py-2.5 text-sm text-primary-900 focus:outline-none focus:border-primary-400 transition-colors appearance-none"
-						>
-							<option value="" disabled>Select your role</option>
-							<option value="student">Student</option>
-							<option value="educator">Educator / Professor</option>
-							<option value="admin">Department Admin</option>
-							<option value="other">Other</option>
-						</select>
-					</div>
-
 					<Button type="submit" disabled={isSubmitting} class="w-full" size="md">
-						{isSubmitting ? 'Submitting...' : 'Apply for Free Access'}
+						{isSubmitting ? 'Submitting...' : formData.role === 'student' ? 'Apply for Access' : 'Get in Touch'}
 					</Button>
 				</form>
 			{/if}
@@ -369,7 +369,7 @@
 	<section class="relative z-10 px-6 py-12 bg-white">
 		<div class="max-w-2xl mx-auto">
 			<h2 class="text-lg font-medium tracking-snug mb-6 text-primary-900">
-				Frequently Asked Questions
+				Questions
 			</h2>
 
 			<div class="divide-y divide-primary-200">
@@ -435,12 +435,5 @@
 	.register-btn:active {
 		transform: translateY(0);
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-	}
-
-	select {
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a3a3a3' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-		background-repeat: no-repeat;
-		background-position: right 0.75rem center;
-		padding-right: 2.5rem;
 	}
 </style>
